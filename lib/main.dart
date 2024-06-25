@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_internals/ui_updates_demo.dart';
+import 'package:flutter_internals/keys/keys.dart';
 
 void main() {
   runApp(const App());
@@ -10,14 +10,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color themeColor = Color(0xFF6750a4);
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true).copyWith(
+        iconTheme: const IconThemeData(size: 29),
+        textTheme: TextTheme(
+          labelMedium: TextStyle(fontSize: 21, color: themeColor),
+          displayMedium: const TextStyle(fontSize: 17, color: Colors.black),
+        ),
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter Internals'),
         ),
-        body: const UiUpdatesDemo(),
+        body: const Keys(),
       ),
     );
   }
