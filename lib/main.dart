@@ -10,7 +10,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color themeColor = Color(0xFF6750a4);
+    Color themeColor = const Color(0xFF6750a4);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true).copyWith(
